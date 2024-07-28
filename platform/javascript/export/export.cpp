@@ -93,6 +93,7 @@ public:
 		mimes["png"] = "image/png";
 		mimes["svg"] = "image/svg";
 		mimes["wasm"] = "application/wasm";
+		mimes["wav"] = "audio/wav";
 		server.instance();
 		stop();
 	}
@@ -144,7 +145,7 @@ public:
 		const String req_file = path.get_file();
 		const String req_ext = path.get_extension();
 		const String cache_path = EditorSettings::get_singleton()->get_cache_dir().plus_file("web");
-		const String filepath = cache_path.plus_file(req_file);
+		const String filepath = cache_path.plus_file(path);
 
 		if (!mimes.has(req_ext) || !FileAccess::exists(filepath)) {
 			String s = "HTTP/1.1 404 Not Found\r\n";
