@@ -846,6 +846,11 @@ Error EditorExportPlatform::export_project_files(const Ref<EditorExportPreset> &
 		String type = ResourceLoader::get_resource_type(path);
 
 		if (FileAccess::exists(path + ".import")) {
+
+			if (features.has("web") && path.ends_with(".wav")) {
+				//add_message(EXPORT_MESSAGE_INFO, "SKIPPED", path);
+				continue;
+			}
 			//file is imported, replace by what it imports
 			Ref<ConfigFile> config;
 			config.instance();
