@@ -94,6 +94,9 @@ public:
 		mimes["svg"] = "image/svg";
 		mimes["wasm"] = "application/wasm";
 		mimes["wav"] = "audio/wav";
+		mimes["ogg"] = "audio/ogg";
+		mimes["mp3"] = "audio/mp3";
+		mimes["webm"] = "audio/webm";
 		server.instance();
 		stop();
 	}
