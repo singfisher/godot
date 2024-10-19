@@ -87,6 +87,7 @@ private:
 public:
 	EditorHTTPServer() {
 		mimes["html"] = "text/html";
+		mimes["txt"] = "text/plain;charset=UTF-8";
 		mimes["js"] = "application/javascript";
 		mimes["json"] = "application/json";
 		mimes["pck"] = "application/octet-stream";
